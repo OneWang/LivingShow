@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A0A71801D645E90006CA3D8 /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A717F1D645E90006CA3D8 /* ADViewController.m */; };
 		0A0A71831D645ED2006CA3D8 /* AAPLCrossDissolveTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A71821D645ED2006CA3D8 /* AAPLCrossDissolveTransitionAnimator.m */; };
+		0A0A71851D6465EA006CA3D8 /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A0A71841D6465EA006CA3D8 /* LaunchImage@2x.png */; };
 		0A0B320E1D61526900C4EA9E /* LivingFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B320D1D61526900C4EA9E /* LivingFlowLayout.m */; };
 		0A0B32111D61545800C4EA9E /* LivingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B32101D61545800C4EA9E /* LivingCell.m */; };
 		0A2FDE9E1D616FB400444F14 /* RelateAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2FDE9D1D616FB400444F14 /* RelateAnchor.m */; };
@@ -66,6 +67,10 @@
 		0ABC03B71D5D7F0D000D498F /* TopAD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABC03B61D5D7F0D000D498F /* TopAD.m */; };
 		0ABC03BA1D5D8BD3000D498F /* LiveCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABC03B91D5D8BD3000D498F /* LiveCollectionViewController.m */; };
 		0ABC03BD1D5D8C4D000D498F /* ADWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABC03BC1D5D8C4D000D498F /* ADWebViewController.m */; };
+		0AC376B91D64721500853353 /* NewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC376B81D64721500853353 /* NewFlowLayout.m */; };
+		0AC376BD1D6472AE00853353 /* AnchorViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC376BB1D6472AE00853353 /* AnchorViewCell.m */; };
+		0AC376BE1D6472AE00853353 /* AnchorViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC376BC1D6472AE00853353 /* AnchorViewCell.xib */; };
+		0AC376C01D6476A600853353 /* FellowerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC376BF1D6476A600853353 /* FellowerViewController.storyboard */; };
 		0AF045B21D61A3A600E3019F /* LiveAnchorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF045B11D61A3A600E3019F /* LiveAnchorView.m */; };
 		0AF045B51D61A44400E3019F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF045B41D61A44400E3019F /* User.m */; };
 		0AF045B81D61A56900E3019F /* LiveEndView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF045B71D61A56900E3019F /* LiveEndView.m */; };
@@ -101,6 +106,7 @@
 		0A0A717F1D645E90006CA3D8 /* ADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
 		0A0A71811D645ED2006CA3D8 /* AAPLCrossDissolveTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCrossDissolveTransitionAnimator.h; sourceTree = "<group>"; };
 		0A0A71821D645ED2006CA3D8 /* AAPLCrossDissolveTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCrossDissolveTransitionAnimator.m; sourceTree = "<group>"; };
+		0A0A71841D6465EA006CA3D8 /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		0A0B320C1D61526900C4EA9E /* LivingFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivingFlowLayout.h; sourceTree = "<group>"; };
 		0A0B320D1D61526900C4EA9E /* LivingFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivingFlowLayout.m; sourceTree = "<group>"; };
 		0A0B320F1D61545800C4EA9E /* LivingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivingCell.h; sourceTree = "<group>"; };
@@ -209,6 +215,12 @@
 		0ABC03B91D5D8BD3000D498F /* LiveCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveCollectionViewController.m; sourceTree = "<group>"; };
 		0ABC03BB1D5D8C4D000D498F /* ADWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADWebViewController.h; sourceTree = "<group>"; };
 		0ABC03BC1D5D8C4D000D498F /* ADWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADWebViewController.m; sourceTree = "<group>"; };
+		0AC376B71D64721500853353 /* NewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFlowLayout.h; sourceTree = "<group>"; };
+		0AC376B81D64721500853353 /* NewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFlowLayout.m; sourceTree = "<group>"; };
+		0AC376BA1D6472AE00853353 /* AnchorViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchorViewCell.h; sourceTree = "<group>"; };
+		0AC376BB1D6472AE00853353 /* AnchorViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnchorViewCell.m; sourceTree = "<group>"; };
+		0AC376BC1D6472AE00853353 /* AnchorViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnchorViewCell.xib; sourceTree = "<group>"; };
+		0AC376BF1D6476A600853353 /* FellowerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FellowerViewController.storyboard; sourceTree = "<group>"; };
 		0AF045B01D61A3A600E3019F /* LiveAnchorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveAnchorView.h; sourceTree = "<group>"; };
 		0AF045B11D61A3A600E3019F /* LiveAnchorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveAnchorView.m; sourceTree = "<group>"; };
 		0AF045B31D61A44400E3019F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -719,6 +731,7 @@
 		0A924A8F1D5C71AD0088A558 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0A0A71841D6465EA006CA3D8 /* LaunchImage@2x.png */,
 				0AF045C71D61C14200E3019F /* danmu.plist */,
 				0AF045C51D61BCEC00E3019F /* user.plist */,
 				0A924A901D5C71AD0088A558 /* login_video.mp4 */,
@@ -759,6 +772,7 @@
 			children = (
 				0A924ABE1D5C80400088A558 /* FellowerViewController.h */,
 				0A924ABF1D5C80400088A558 /* FellowerViewController.m */,
+				0AC376BF1D6476A600853353 /* FellowerViewController.storyboard */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -897,6 +911,11 @@
 		0A924AB41D5C7FB20088A558 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0AC376B71D64721500853353 /* NewFlowLayout.h */,
+				0AC376B81D64721500853353 /* NewFlowLayout.m */,
+				0AC376BA1D6472AE00853353 /* AnchorViewCell.h */,
+				0AC376BB1D6472AE00853353 /* AnchorViewCell.m */,
+				0AC376BC1D6472AE00853353 /* AnchorViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1046,10 +1065,13 @@
 				0A924AC51D5C82BA0088A558 /* RequestCover.xib in Resources */,
 				0A924A011D5C6EB80088A558 /* Assets.xcassets in Resources */,
 				0ABC03A61D5D5AF0000D498F /* XRPlaceholder.png in Resources */,
+				0AC376BE1D6472AE00853353 /* AnchorViewCell.xib in Resources */,
 				0AF045C61D61BCEC00E3019F /* user.plist in Resources */,
 				0AF045BA1D61A58500E3019F /* LiveEndView.xib in Resources */,
+				0A0A71851D6465EA006CA3D8 /* LaunchImage@2x.png in Resources */,
 				0A9249FF1D5C6EB80088A558 /* Main.storyboard in Resources */,
 				0AF045BF1D61A60E00E3019F /* LiveUserView.xib in Resources */,
+				0AC376C01D6476A600853353 /* FellowerViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1131,6 +1153,7 @@
 				0ABC03B01D5D7CAE000D498F /* HotLiveCell.m in Sources */,
 				0A2FDE9E1D616FB400444F14 /* RelateAnchor.m in Sources */,
 				0A716D081D62F71E008349D1 /* StartLiveView.m in Sources */,
+				0AC376B91D64721500853353 /* NewFlowLayout.m in Sources */,
 				0A924A801D5C70370088A558 /* RefreshGifHeader.m in Sources */,
 				0AF045B51D61A44400E3019F /* User.m in Sources */,
 				0A924AA11D5C7C520088A558 /* YZFlowLayout.m in Sources */,
@@ -1158,6 +1181,7 @@
 				0ABC03A91D5D5CC3000D498F /* NetWorkRequest.m in Sources */,
 				0A924ABD1D5C7FFF0088A558 /* NewViewController.m in Sources */,
 				0A924A841D5C70370088A558 /* UIViewController+SLExtension.m in Sources */,
+				0AC376BD1D6472AE00853353 /* AnchorViewCell.m in Sources */,
 				0A924A791D5C70370088A558 /* MainTabBarController.m in Sources */,
 				0A924A7E1D5C70370088A558 /* NSObject+HUD.m in Sources */,
 				0AF045B81D61A56900E3019F /* LiveEndView.m in Sources */,

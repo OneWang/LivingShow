@@ -18,5 +18,7 @@
 
 // 点击了用户
 #define kNotifyClickUser @"kNotifyClickUser"
+// 当前没有关注的主播, 去看热门主播
+#define kNotifyToseeBigWorld @"kNotifyToseeBigWorld"
 
 #endif /* Header_h */

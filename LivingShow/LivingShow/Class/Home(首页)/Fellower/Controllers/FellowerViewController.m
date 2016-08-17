@@ -14,6 +14,8 @@
 
 @property (nonatomic, weak) RequestCover *cover;
 
+@property (weak, nonatomic) IBOutlet UIButton *toSeeBtn;
+
 @end
 
 @implementation FellowerViewController
@@ -39,6 +41,10 @@
     
     self.cover.frame = self.view.bounds;
     
+}
+
+- (IBAction)toSeeWorld {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotifyToseeBigWorld object:nil];
 }
 
 // 加载数据

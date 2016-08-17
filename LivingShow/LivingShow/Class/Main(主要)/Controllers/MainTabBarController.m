@@ -35,14 +35,14 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    ADViewController *one = [[ADViewController alloc]init];
-    one.myBlock = ^(BOOL isClick){
+    ADViewController *AD = [[ADViewController alloc]init];
+    AD.myBlock = ^(BOOL isClick){
         _isClick = isClick;
         [_imageView removeFromSuperview];
         _imageView = nil;
     };
     if (_isClick == NO) {
-        [self presentViewController:one animated:NO completion:nil];
+        [self presentViewController:AD animated:NO completion:nil];
     }
 }
 
@@ -51,9 +51,10 @@
     
     _imageView = [[UIImageView alloc]initWithFrame:self.view.bounds];
     
-    _imageView.image = [UIImage imageNamed:@"LaunchImage"];
+    _imageView.image = [UIImage imageNamed:@"LaunchImage@2x.png"];
     [self.view addSubview:_imageView];
     [self.view bringSubviewToFront:_imageView];
+    
     
     //设置代理
     self.delegate = self;

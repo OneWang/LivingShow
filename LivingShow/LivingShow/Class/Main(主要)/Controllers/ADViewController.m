@@ -28,7 +28,7 @@
     [super viewDidLoad];
     self.transitioningDelegate = self;
     _LaunchImage = [[UIImageView alloc]initWithFrame:self.view.bounds];
-    _LaunchImage.image = [UIImage imageNamed:@"LaunchImage"];
+    _LaunchImage.image = [UIImage imageNamed:@"LaunchImage@2x.png"];
     [self.view addSubview:_LaunchImage];
     [self requestAds];
     _seconds = 6;
