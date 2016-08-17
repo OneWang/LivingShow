@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LivingViewController">
+            <connections>
+                <outlet property="backBtn" destination="58c-sf-GOV" id="LWC-T4-LId"/>
+                <outlet property="backgroundView" destination="NYX-UM-0ll" id="7eE-S0-9Bj"/>
+                <outlet property="middleView" destination="gNf-5y-rgr" id="Nbn-gR-4d8"/>
+                <outlet property="myTitle" destination="rho-Vs-A1d" id="svB-aF-Kpu"/>
+                <outlet property="view" destination="iN0-l3-epB" id="fI2-ig-pB8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NYX-UM-0ll">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.38633366619999998" green="0.34647426510000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58c-sf-GOV">
+                    <rect key="frame" x="319" y="30" width="15" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="6oy-OV-eVc"/>
+                        <constraint firstAttribute="height" constant="22" id="z8s-7h-Vog"/>
+                    </constraints>
+                    <state key="normal" image="user_close_15x15_"/>
+                    <connections>
+                        <action selector="backMain" destination="-1" eventType="touchUpInside" id="O2O-Zt-ayh"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNf-5y-rgr">
+                    <rect key="frame" x="0.0" y="60" width="375" height="200"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="给主播起个昵称吧!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rho-Vs-A1d">
+                            <rect key="frame" x="77" y="30" width="221" height="37"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcX-Ke-psh">
+                            <rect key="frame" x="62" y="117" width="250" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Uh1-hB-FoN"/>
+                            </constraints>
+                            <state key="normal" title="开始直播" backgroundImage="room_button">
+                                <color key="titleColor" red="0.58913471029999998" green="0.82417929290000003" blue="0.045702342460000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="startLiveStream" destination="-1" eventType="touchUpInside" id="cvc-F5-rqN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="zcX-Ke-psh" firstAttribute="top" secondItem="rho-Vs-A1d" secondAttribute="bottom" constant="50" id="4XZ-yD-MXR"/>
+                        <constraint firstItem="rho-Vs-A1d" firstAttribute="leading" secondItem="gNf-5y-rgr" secondAttribute="leading" constant="77" id="KZ8-KR-vxj"/>
+                        <constraint firstItem="zcX-Ke-psh" firstAttribute="leading" secondItem="gNf-5y-rgr" secondAttribute="leading" constant="62" id="QUJ-U0-oxF"/>
+                        <constraint firstItem="rho-Vs-A1d" firstAttribute="top" secondItem="gNf-5y-rgr" secondAttribute="top" constant="30" id="SKK-jH-mmT"/>
+                        <constraint firstAttribute="bottom" secondItem="zcX-Ke-psh" secondAttribute="bottom" constant="39" id="aJH-Lj-3Jr"/>
+                        <constraint firstItem="zcX-Ke-psh" firstAttribute="top" secondItem="rho-Vs-A1d" secondAttribute="bottom" constant="50" id="kuf-ME-chN"/>
+                        <constraint firstAttribute="height" constant="200" id="t6a-Is-uUw"/>
+                        <constraint firstAttribute="trailing" secondItem="zcX-Ke-psh" secondAttribute="trailing" constant="63" id="w9e-7k-2JO"/>
+                        <constraint firstAttribute="trailing" secondItem="rho-Vs-A1d" secondAttribute="trailing" constant="77" id="yrm-gh-Edi"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="kuf-ME-chN"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="58c-sf-GOV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="0mr-gb-lSe"/>
+                <constraint firstItem="gNf-5y-rgr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="D1L-qk-aoZ"/>
+                <constraint firstAttribute="trailing" secondItem="gNf-5y-rgr" secondAttribute="trailing" id="DGk-VX-lkI"/>
+                <constraint firstAttribute="trailing" secondItem="58c-sf-GOV" secondAttribute="trailing" constant="41" id="O13-sY-3x5"/>
+                <constraint firstAttribute="bottom" secondItem="NYX-UM-0ll" secondAttribute="bottom" id="RCR-La-SFb"/>
+                <constraint firstItem="gNf-5y-rgr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="pKt-Fn-N2K"/>
+                <constraint firstAttribute="trailing" secondItem="NYX-UM-0ll" secondAttribute="trailing" id="swP-YX-764"/>
+                <constraint firstItem="NYX-UM-0ll" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vSN-0x-S4h"/>
+                <constraint firstItem="NYX-UM-0ll" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="w9o-jm-7K3"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="242.5" y="293.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="room_button" width="250" height="44"/>
+        <image name="user_close_15x15_" width="15" height="15"/>
+    </resources>
+</document>

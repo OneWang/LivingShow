@@ -1,0 +1,44 @@
+//
+//  PrefixHeader.pch
+//  Live
+//
+//  Created by LI on 16/8/10.
+//  Copyright © 2016年 LI. All rights reserved.
+//
+
+
+#pragma mark - 自定义NSLog
+
+#ifdef __OBJC__
+
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t  %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(FORMAT, ...) nil
+#endif
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <IJKMediaFramework/IJKMediaFramework.h>
+#import <Masonry.h>
+#import "MBProgressHUD.h"
+#import "UIViewController+SLHUD.h"
+#import "UIViewController+SLExtension.h"
+#import "UIView+SLExtension.h"
+#import <MJExtension.h>
+#import "UIDevice+SLExtension.h"
+#import "NSObject+HUD.h"
+#import "Header.h"
+#import "AFNetworking.h"
+#import "NetWorkRequest.h"
+#import "MJRefresh.h"
+
+#endif /* PrefixHeader_pch */
+
+
+#endif
