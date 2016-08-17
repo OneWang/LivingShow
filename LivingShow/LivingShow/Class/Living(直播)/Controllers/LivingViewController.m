@@ -29,6 +29,9 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.hidden = YES;
+    
+    //设置键盘TextField
+    [self setupTextField];
 }
 
 #pragma mark ---- <设置键盘TextField>

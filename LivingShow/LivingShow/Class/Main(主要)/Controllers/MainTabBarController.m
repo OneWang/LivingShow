@@ -16,20 +16,44 @@
 #import "FellowViewController.h"
 #import "MineViewController.h"
 
+#import "ADViewController.h"
+
 /** 导入系统框架 */
 #import <AVFoundation/AVFoundation.h>
 
 @interface MainTabBarController ()<UITabBarControllerDelegate>
 
+{
+    BOOL _isClick;
+    UIImageView *_imageView;
+}
 
 @end
 
 @implementation MainTabBarController
 
-
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    ADViewController *one = [[ADViewController alloc]init];
+    one.myBlock = ^(BOOL isClick){
+        _isClick = isClick;
+        [_imageView removeFromSuperview];
+        _imageView = nil;
+    };
+    if (_isClick == NO) {
+        [self presentViewController:one animated:NO completion:nil];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _imageView = [[UIImageView alloc]initWithFrame:self.view.bounds];
+    
+    _imageView.image = [UIImage imageNamed:@"LaunchImage"];
+    [self.view addSubview:_imageView];
+    [self.view bringSubviewToFront:_imageView];
     
     //设置代理
     self.delegate = self;

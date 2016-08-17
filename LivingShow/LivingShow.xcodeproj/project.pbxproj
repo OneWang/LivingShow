@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0A71801D645E90006CA3D8 /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A717F1D645E90006CA3D8 /* ADViewController.m */; };
+		0A0A71831D645ED2006CA3D8 /* AAPLCrossDissolveTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A71821D645ED2006CA3D8 /* AAPLCrossDissolveTransitionAnimator.m */; };
 		0A0B320E1D61526900C4EA9E /* LivingFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B320D1D61526900C4EA9E /* LivingFlowLayout.m */; };
 		0A0B32111D61545800C4EA9E /* LivingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0B32101D61545800C4EA9E /* LivingCell.m */; };
 		0A2FDE9E1D616FB400444F14 /* RelateAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2FDE9D1D616FB400444F14 /* RelateAnchor.m */; };
@@ -95,6 +97,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0A717E1D645E90006CA3D8 /* ADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
+		0A0A717F1D645E90006CA3D8 /* ADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
+		0A0A71811D645ED2006CA3D8 /* AAPLCrossDissolveTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCrossDissolveTransitionAnimator.h; sourceTree = "<group>"; };
+		0A0A71821D645ED2006CA3D8 /* AAPLCrossDissolveTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCrossDissolveTransitionAnimator.m; sourceTree = "<group>"; };
 		0A0B320C1D61526900C4EA9E /* LivingFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivingFlowLayout.h; sourceTree = "<group>"; };
 		0A0B320D1D61526900C4EA9E /* LivingFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivingFlowLayout.m; sourceTree = "<group>"; };
 		0A0B320F1D61545800C4EA9E /* LivingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivingCell.h; sourceTree = "<group>"; };
@@ -539,6 +545,8 @@
 				0A924A4A1D5C70370088A558 /* MainTabBarController.m */,
 				0A924A4B1D5C70370088A558 /* QFNavigationController.h */,
 				0A924A4C1D5C70370088A558 /* QFNavigationController.m */,
+				0A0A717E1D645E90006CA3D8 /* ADViewController.h */,
+				0A0A717F1D645E90006CA3D8 /* ADViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -553,6 +561,8 @@
 		0A924A4E1D5C70370088A558 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0A0A71811D645ED2006CA3D8 /* AAPLCrossDissolveTransitionAnimator.h */,
+				0A0A71821D645ED2006CA3D8 /* AAPLCrossDissolveTransitionAnimator.m */,
 				0ABC03A71D5D5CC3000D498F /* NetWorkRequest.h */,
 				0ABC03A81D5D5CC3000D498F /* NetWorkRequest.m */,
 			);
@@ -1131,6 +1141,7 @@
 				0A716D0B1D62F9F9008349D1 /* UIControl+Add.m in Sources */,
 				0A924A7B1D5C70370088A558 /* QFTabbar.m in Sources */,
 				0A0B320E1D61526900C4EA9E /* LivingFlowLayout.m in Sources */,
+				0A0A71831D645ED2006CA3D8 /* AAPLCrossDissolveTransitionAnimator.m in Sources */,
 				0AF045B21D61A3A600E3019F /* LiveAnchorView.m in Sources */,
 				0A924A771D5C70370088A558 /* LoginViewController.m in Sources */,
 				0A924A741D5C70370088A558 /* FellowViewController.m in Sources */,
@@ -1159,6 +1170,7 @@
 				0A924A761D5C70370088A558 /* LivingViewController.m in Sources */,
 				0A924A811D5C70370088A558 /* UIImage+Extension.m in Sources */,
 				0A924AC01D5C80400088A558 /* FellowerViewController.m in Sources */,
+				0A0A71801D645E90006CA3D8 /* ADViewController.m in Sources */,
 				0A924AA41D5C7D060088A558 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
