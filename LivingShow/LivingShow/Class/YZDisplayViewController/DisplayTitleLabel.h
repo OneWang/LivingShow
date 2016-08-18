@@ -1,5 +1,5 @@
 //
-//  YZDisplayTitleLabel.h
+//  DisplayTitleLabel.h
 //  BuDeJie
 //
 //  Created by yz on 15/12/4.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YZDisplayTitleLabel : UILabel
+@interface DisplayTitleLabel : UILabel
 
 @property (nonatomic, assign) CGFloat progress;
 

@@ -48,9 +48,9 @@
 		0A924A921D5C71AD0088A558 /* login_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0A924A901D5C71AD0088A558 /* login_video.mp4 */; };
 		0A924A931D5C71AD0088A558 /* loginmovie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0A924A911D5C71AD0088A558 /* loginmovie.mp4 */; };
 		0A924A9E1D5C7C520088A558 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A924A961D5C7C520088A558 /* UIView+Frame.m */; };
-		0A924A9F1D5C7C520088A558 /* YZDisplayTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A924A981D5C7C520088A558 /* YZDisplayTitleLabel.m */; };
-		0A924AA01D5C7C520088A558 /* YZDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A924A9A1D5C7C520088A558 /* YZDisplayViewController.m */; };
-		0A924AA11D5C7C520088A558 /* YZFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A924A9D1D5C7C520088A558 /* YZFlowLayout.m */; };
+		0A924A9F1D5C7C520088A558 /* DisplayTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A924A981D5C7C520088A558 /* DisplayTitleLabel.m */; };
+		0A924AA01D5C7C520088A558 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A924A9A1D5C7C520088A558 /* DisplayViewController.m */; };
+		0A924AA11D5C7C520088A558 /* FlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A924A9D1D5C7C520088A558 /* FlowLayout.m */; };
 		0A924AA41D5C7D060088A558 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A924AA31D5C7D060088A558 /* HomeViewController.m */; };
 		0A924ABA1D5C7FEF0088A558 /* HotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A924AB91D5C7FEF0088A558 /* HotViewController.m */; };
 		0A924ABD1D5C7FFF0088A558 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A924ABC1D5C7FFF0088A558 /* NewViewController.m */; };
@@ -178,13 +178,13 @@
 		0A924A911D5C71AD0088A558 /* loginmovie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginmovie.mp4; sourceTree = "<group>"; };
 		0A924A951D5C7C520088A558 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		0A924A961D5C7C520088A558 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		0A924A971D5C7C520088A558 /* YZDisplayTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayTitleLabel.h; sourceTree = "<group>"; };
-		0A924A981D5C7C520088A558 /* YZDisplayTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZDisplayTitleLabel.m; sourceTree = "<group>"; };
-		0A924A991D5C7C520088A558 /* YZDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayViewController.h; sourceTree = "<group>"; };
-		0A924A9A1D5C7C520088A558 /* YZDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZDisplayViewController.m; sourceTree = "<group>"; };
-		0A924A9B1D5C7C520088A558 /* YZDisplayViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayViewHeader.h; sourceTree = "<group>"; };
-		0A924A9C1D5C7C520088A558 /* YZFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZFlowLayout.h; sourceTree = "<group>"; };
-		0A924A9D1D5C7C520088A558 /* YZFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZFlowLayout.m; sourceTree = "<group>"; };
+		0A924A971D5C7C520088A558 /* DisplayTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayTitleLabel.h; sourceTree = "<group>"; };
+		0A924A981D5C7C520088A558 /* DisplayTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayTitleLabel.m; sourceTree = "<group>"; };
+		0A924A991D5C7C520088A558 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
+		0A924A9A1D5C7C520088A558 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
+		0A924A9B1D5C7C520088A558 /* DisplayViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewHeader.h; sourceTree = "<group>"; };
+		0A924A9C1D5C7C520088A558 /* FlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowLayout.h; sourceTree = "<group>"; };
+		0A924A9D1D5C7C520088A558 /* FlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowLayout.m; sourceTree = "<group>"; };
 		0A924AA21D5C7D060088A558 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0A924AA31D5C7D060088A558 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0A924AA51D5C7D5E0088A558 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -348,7 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				0ABC03A11D5D5AF0000D498F /* XRCarouselView */,
-				0A924A941D5C7C520088A558 /* YZDisplayViewController */,
+				0A924A941D5C7C520088A558 /* DisplayViewController */,
 				0A924A291D5C70370088A558 /* Fellow(关注) */,
 				0A924A301D5C70370088A558 /* Home(首页) */,
 				0A924A371D5C70370088A558 /* Living(直播) */,
@@ -740,19 +740,20 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		0A924A941D5C7C520088A558 /* YZDisplayViewController */ = {
+		0A924A941D5C7C520088A558 /* DisplayViewController */ = {
 			isa = PBXGroup;
 			children = (
 				0A924A951D5C7C520088A558 /* UIView+Frame.h */,
 				0A924A961D5C7C520088A558 /* UIView+Frame.m */,
-				0A924A971D5C7C520088A558 /* YZDisplayTitleLabel.h */,
-				0A924A981D5C7C520088A558 /* YZDisplayTitleLabel.m */,
-				0A924A991D5C7C520088A558 /* YZDisplayViewController.h */,
-				0A924A9A1D5C7C520088A558 /* YZDisplayViewController.m */,
-				0A924A9B1D5C7C520088A558 /* YZDisplayViewHeader.h */,
-				0A924A9C1D5C7C520088A558 /* YZFlowLayout.h */,
-				0A924A9D1D5C7C520088A558 /* YZFlowLayout.m */,
+				0A924A971D5C7C520088A558 /* DisplayTitleLabel.h */,
+				0A924A981D5C7C520088A558 /* DisplayTitleLabel.m */,
+				0A924A991D5C7C520088A558 /* DisplayViewController.h */,
+				0A924A9A1D5C7C520088A558 /* DisplayViewController.m */,
+				0A924A9B1D5C7C520088A558 /* DisplayViewHeader.h */,
+				0A924A9C1D5C7C520088A558 /* FlowLayout.h */,
+				0A924A9D1D5C7C520088A558 /* FlowLayout.m */,
 			);
+			name = DisplayViewController;
 			path = YZDisplayViewController;
 			sourceTree = "<group>";
 		};
@@ -1156,7 +1157,7 @@
 				0AC376B91D64721500853353 /* NewFlowLayout.m in Sources */,
 				0A924A801D5C70370088A558 /* RefreshGifHeader.m in Sources */,
 				0AF045B51D61A44400E3019F /* User.m in Sources */,
-				0A924AA11D5C7C520088A558 /* YZFlowLayout.m in Sources */,
+				0A924AA11D5C7C520088A558 /* FlowLayout.m in Sources */,
 				0A9249F61D5C6EB70088A558 /* main.m in Sources */,
 				0A924A9E1D5C7C520088A558 /* UIView+Frame.m in Sources */,
 				0A924A831D5C70370088A558 /* UIView+SLExtension.m in Sources */,
@@ -1176,7 +1177,7 @@
 				0A924A7D1D5C70370088A558 /* UIDevice+SLExtension.m in Sources */,
 				0A924ABA1D5C7FEF0088A558 /* HotViewController.m in Sources */,
 				0ABC03A51D5D5AF0000D498F /* XRCarouselView.m in Sources */,
-				0A924AA01D5C7C520088A558 /* YZDisplayViewController.m in Sources */,
+				0A924AA01D5C7C520088A558 /* DisplayViewController.m in Sources */,
 				0A924A781D5C70370088A558 /* ThirdLoginView.m in Sources */,
 				0ABC03A91D5D5CC3000D498F /* NetWorkRequest.m in Sources */,
 				0A924ABD1D5C7FFF0088A558 /* NewViewController.m in Sources */,
@@ -1186,7 +1187,7 @@
 				0A924A7E1D5C70370088A558 /* NSObject+HUD.m in Sources */,
 				0AF045B81D61A56900E3019F /* LiveEndView.m in Sources */,
 				0AF045C21D61A64600E3019F /* LiveToolView.m in Sources */,
-				0A924A9F1D5C7C520088A558 /* YZDisplayTitleLabel.m in Sources */,
+				0A924A9F1D5C7C520088A558 /* DisplayTitleLabel.m in Sources */,
 				0A924A851D5C70370088A558 /* SLTopWindow.m in Sources */,
 				0A924A821D5C70370088A558 /* UIImageView+Extension.m in Sources */,
 				0A924A7F1D5C70370088A558 /* UIViewController+SLHUD.m in Sources */,

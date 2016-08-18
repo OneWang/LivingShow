@@ -6,8 +6,8 @@
 //  Copyright © 2016年 LI. All rights reserved.
 //
 
-#import "YZDisplayViewController.h"
+#import "DisplayViewController.h"
 
-@interface HomeViewController : YZDisplayViewController
+@interface HomeViewController : DisplayViewController
 
 @end

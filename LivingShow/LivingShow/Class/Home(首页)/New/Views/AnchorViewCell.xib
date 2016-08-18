@@ -23,18 +23,26 @@
                             <constraint firstAttribute="width" constant="33" id="qch-Ug-JWK"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xap-yk-02G">
-                        <rect key="frame" x="10" y="10" width="100" height="24"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xap-yk-02G">
+                        <rect key="frame" x="10" y="10" width="100" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="lWE-eS-gHa"/>
+                            <constraint firstAttribute="height" constant="15" id="svc-Hc-IEU"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <state key="normal" title="Button"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="Button" image="location_white_8x9">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="svc-Hc-IEU"/>
+                            </mask>
+                        </variation>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjx-P9-Bve">
                         <rect key="frame" x="0.0" y="180" width="200" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -64,6 +72,7 @@
     </objects>
     <resources>
         <image name="flag_new_33x17_" width="33" height="17"/>
+        <image name="location_white_8x9" width="8" height="9"/>
         <image name="placeholder_head" width="100" height="100"/>
     </resources>
 </document>

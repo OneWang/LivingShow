@@ -75,7 +75,7 @@
 
 #pragma mark 封装添加控制器方法
 - (void)addChildViewController:(UIViewController *)chileViewController withImageNamed:(NSString *)imageName withTitle:(NSString *)title{
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:chileViewController];
+    QFNavigationController *nav = [[QFNavigationController alloc] initWithRootViewController:chileViewController];
     UIImage *image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *selImage = [[UIImage imageNamed:[NSString stringWithFormat:@"%@_on",imageName]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     nav.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:image selectedImage:selImage];

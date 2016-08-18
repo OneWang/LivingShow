@@ -14,7 +14,7 @@ typedef enum : NSUInteger {
     YZTitleColorGradientStyleFill, // 填充
 } YZTitleColorGradientStyle;
 
-@interface YZDisplayViewController : UIViewController
+@interface DisplayViewController : UIViewController
 
 /**************************************【内容】************************************/
 /**

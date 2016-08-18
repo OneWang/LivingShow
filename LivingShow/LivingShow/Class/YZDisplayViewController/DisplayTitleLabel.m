@@ -6,9 +6,9 @@
 //  Copyright © 2015年 yz. All rights reserved.
 //
 
-#import "YZDisplayTitleLabel.h"
+#import "DisplayTitleLabel.h"
 
-@implementation YZDisplayTitleLabel
+@implementation DisplayTitleLabel
 
 - (void)drawRect:(CGRect)rect
 {

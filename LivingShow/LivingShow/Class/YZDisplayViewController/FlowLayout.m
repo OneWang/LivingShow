@@ -6,9 +6,9 @@
 //  Copyright © 2015年 yz. All rights reserved.
 //
 
-#import "YZFlowLayout.h"
+#import "FlowLayout.h"
 
-@implementation YZFlowLayout
+@implementation FlowLayout
 
 - (void)prepareLayout
 {

@@ -6,15 +6,15 @@
 //  Copyright © 2015年 yz. All rights reserved.
 //
 
-#import "YZDisplayViewController.h"
-#import "YZDisplayTitleLabel.h"
-#import "YZDisplayViewHeader.h"
+#import "DisplayViewController.h"
+#import "DisplayTitleLabel.h"
+#import "DisplayViewHeader.h"
 #import "UIView+Frame.h"
-#import "YZFlowLayout.h"
+#import "FlowLayout.h"
 
 static NSString * const ID = @"CONTENTCELL";
 
-@interface YZDisplayViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface DisplayViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 {
     UIColor *_norColor;
     UIColor *_selColor;
@@ -164,7 +164,7 @@ static NSString * const ID = @"CONTENTCELL";
 
 @end
 
-@implementation YZDisplayViewController
+@implementation DisplayViewController
 
 #pragma mark - 初始化方法
 - (instancetype)init
@@ -184,7 +184,7 @@ static NSString * const ID = @"CONTENTCELL";
 - (void)initial
 {
     // 初始化标题高度
-    _titleHeight = YZTitleScrollViewH;
+    _titleHeight = TitleScrollViewH;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
@@ -205,7 +205,7 @@ static NSString * const ID = @"CONTENTCELL";
 - (UIFont *)titleFont
 {
     if (_titleFont == nil) {
-        _titleFont = YZTitleFont;
+        _titleFont = TitleFont;
     }
     return _titleFont;
 }
@@ -293,7 +293,7 @@ static NSString * const ID = @"CONTENTCELL";
     if (_contentScrollView == nil) {
         
         // 创建布局
-        YZFlowLayout *layout = [[YZFlowLayout alloc] init];
+        FlowLayout *layout = [[FlowLayout alloc] init];
         
         UICollectionView *contentScrollView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _contentScrollView = contentScrollView;
@@ -360,7 +360,7 @@ static NSString * const ID = @"CONTENTCELL";
 {
     _isfullScreen = isfullScreen;
     
-    self.contentView.frame = CGRectMake(0, 0, YZScreenW, YZScreenH);
+    self.contentView.frame = CGRectMake(0, 0, ScreenW, ScreenH);
     
 }
 
@@ -483,16 +483,16 @@ static NSString * const ID = @"CONTENTCELL";
         
         CGFloat statusH = [UIApplication sharedApplication].statusBarFrame.size.height;
         
-        CGFloat titleY = self.navigationController.navigationBarHidden == NO ?YZNavBarH:statusH;
+        CGFloat titleY = self.navigationController.navigationBarHidden == NO ?NavBarH:statusH;
         
         // 是否占据全屏
         if (_isfullScreen) {
             
             // 整体contentView尺寸
-            self.contentView.frame = CGRectMake(0, 0, YZScreenW, YZScreenH);
+            self.contentView.frame = CGRectMake(0, 0, ScreenW, ScreenH);
             
             // 顶部标题View尺寸
-            self.titleScrollView.frame = CGRectMake(0, titleY, YZScreenW, self.titleHeight);
+            self.titleScrollView.frame = CGRectMake(0, titleY, ScreenW, self.titleHeight);
             
             // 顶部内容View尺寸
             self.contentScrollView.frame = self.contentView.bounds;
@@ -501,16 +501,16 @@ static NSString * const ID = @"CONTENTCELL";
         }
         
         if (self.contentView.frame.size.height == 0) {
-            self.contentView.frame = CGRectMake(0, titleY, YZScreenW, YZScreenH - titleY);
+            self.contentView.frame = CGRectMake(0, titleY, ScreenW, ScreenH - titleY);
         }
         
         // 顶部标题View尺寸
-        self.titleScrollView.frame = CGRectMake(0, 0, YZScreenW, self.titleHeight);
+        self.titleScrollView.frame = CGRectMake(0, 0, ScreenW, self.titleHeight);
         
         // 顶部内容View尺寸
         CGFloat contentY = CGRectGetMaxY(self.titleScrollView.frame);
         CGFloat contentH = self.contentView.yz_height - contentY;
-        self.contentScrollView.frame = CGRectMake(0, contentY, YZScreenW, contentH);
+        self.contentScrollView.frame = CGRectMake(0, contentY, ScreenW, contentH);
         
     }
     
@@ -566,7 +566,7 @@ static NSString * const ID = @"CONTENTCELL";
         totalWidth += width;
     }
     
-    if (totalWidth > YZScreenW) {
+    if (totalWidth > ScreenW) {
         
         _titleMargin = margin;
         
@@ -575,7 +575,7 @@ static NSString * const ID = @"CONTENTCELL";
         return;
     }
     
-    CGFloat titleMargin = (YZScreenW - totalWidth) / (count + 1);
+    CGFloat titleMargin = (ScreenW - totalWidth) / (count + 1);
     
     _titleMargin = titleMargin < margin? margin: titleMargin;
     
@@ -600,7 +600,7 @@ static NSString * const ID = @"CONTENTCELL";
         
         UIViewController *vc = self.childViewControllers[i];
         
-        UILabel *label = [[YZDisplayTitleLabel alloc] init];
+        UILabel *label = [[DisplayTitleLabel alloc] init];
         
         label.tag = i;
         
@@ -639,23 +639,32 @@ static NSString * const ID = @"CONTENTCELL";
             [self titleClick:tap];
         }
     }
+    // 监听点击"去看最热主播"
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toSeeWorld) name:kNotifyToseeBigWorld object:nil];
     
     // 设置标题滚动视图的内容范围
     UILabel *lastLabel = self.titleLabels.lastObject;
     _titleScrollView.contentSize = CGSizeMake(CGRectGetMaxX(lastLabel.frame), 0);
     _titleScrollView.showsHorizontalScrollIndicator = NO;
-    _contentScrollView.contentSize = CGSizeMake(count * YZScreenW, 0);
+    _contentScrollView.contentSize = CGSizeMake(count * ScreenW, 0);
     
+}
+
+- (void)toSeeWorld
+{
+    if (0 == _selectIndex) {
+        [self titleClick:nil];
+    }
 }
 
 #pragma mark - 标题效果渐变方法
 // 设置标题颜色渐变
-- (void)setUpTitleColorGradientWithOffset:(CGFloat)offsetX rightLabel:(YZDisplayTitleLabel *)rightLabel leftLabel:(YZDisplayTitleLabel *)leftLabel
+- (void)setUpTitleColorGradientWithOffset:(CGFloat)offsetX rightLabel:(DisplayTitleLabel *)rightLabel leftLabel:(DisplayTitleLabel *)leftLabel
 {
     if (_isShowTitleGradient == NO) return;
     
     // 获取右边缩放
-    CGFloat rightSacle = offsetX / YZScreenW - leftLabel.tag;
+    CGFloat rightSacle = offsetX / ScreenW - leftLabel.tag;
     
     // 获取左边缩放比例
     CGFloat leftScale = 1 - rightSacle;
@@ -718,11 +727,11 @@ static NSString * const ID = @"CONTENTCELL";
     if (_isShowTitleScale == NO) return;
     
     // 获取右边缩放
-    CGFloat rightSacle = offsetX / YZScreenW - leftLabel.tag;
+    CGFloat rightSacle = offsetX / ScreenW - leftLabel.tag;
     
     CGFloat leftScale = 1 - rightSacle;
     
-    CGFloat scaleTransform = _titleScale?_titleScale:YZTitleTransformScale;
+    CGFloat scaleTransform = _titleScale?_titleScale:TitleTransformScale;
     
     scaleTransform -= 1;
     
@@ -758,10 +767,10 @@ static NSString * const ID = @"CONTENTCELL";
     CGFloat offsetDelta = offsetX - _lastOffsetX;
     
     // 计算当前下划线偏移量
-    CGFloat underLineTransformX = offsetDelta * centerDelta / YZScreenW;
+    CGFloat underLineTransformX = offsetDelta * centerDelta / ScreenW;
     
     // 宽度递增偏移量
-    CGFloat underLineWidth = offsetDelta * widthDelta / YZScreenW;
+    CGFloat underLineWidth = offsetDelta * widthDelta / ScreenW;
     
     self.underLine.yz_width += underLineWidth;
     self.underLine.yz_x += underLineTransformX;
@@ -783,10 +792,10 @@ static NSString * const ID = @"CONTENTCELL";
     CGFloat offsetDelta = offsetX - _lastOffsetX;
     
     // 计算当前下划线偏移量
-    CGFloat coverTransformX = offsetDelta * centerDelta / YZScreenW;
+    CGFloat coverTransformX = offsetDelta * centerDelta / ScreenW;
     
     // 宽度递增偏移量
-    CGFloat coverWidth = offsetDelta * widthDelta / YZScreenW;
+    CGFloat coverWidth = offsetDelta * widthDelta / ScreenW;
     
     self.coverView.yz_width += coverWidth;
     self.coverView.yz_x += coverTransformX;
@@ -826,7 +835,7 @@ static NSString * const ID = @"CONTENTCELL";
     [self selectLabel:label];
     
     // 内容滚动视图滚动到对应位置
-    CGFloat offsetX = i * YZScreenW;
+    CGFloat offsetX = i * ScreenW;
     
     self.contentScrollView.contentOffset = CGPointMake(offsetX, 0);
     
@@ -839,11 +848,11 @@ static NSString * const ID = @"CONTENTCELL";
     // 判断控制器的view有没有加载，没有就加载，加载完在发送通知
     if (vc.view) {
         // 发出通知点击标题通知
-        [[NSNotificationCenter defaultCenter] postNotificationName:YZDisplayViewClickOrScrollDidFinshNote  object:vc];
+        [[NSNotificationCenter defaultCenter] postNotificationName:DisplayViewClickOrScrollDidFinshNote  object:vc];
         
         // 发出重复点击标题通知
         if (_selIndex == i) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:YZDisplayViewRepeatClickTitleNote object:vc];
+            [[NSNotificationCenter defaultCenter] postNotificationName:DisplayViewRepeatClickTitleNote object:vc];
         }
     }
     
@@ -856,7 +865,7 @@ static NSString * const ID = @"CONTENTCELL";
 - (void)selectLabel:(UILabel *)label
 {
     
-    for (YZDisplayTitleLabel *labelView in self.titleLabels) {
+    for (DisplayTitleLabel *labelView in self.titleLabels) {
         
         if (label == labelView) continue;
         
@@ -879,7 +888,7 @@ static NSString * const ID = @"CONTENTCELL";
     // 标题缩放
     if (_isShowTitleScale) {
         
-        CGFloat scaleTransform = _titleScale?_titleScale:YZTitleTransformScale;
+        CGFloat scaleTransform = _titleScale?_titleScale:TitleTransformScale;
         
         label.transform = CGAffineTransformMakeScale(scaleTransform, scaleTransform);
     }
@@ -941,7 +950,7 @@ static NSString * const ID = @"CONTENTCELL";
     // 获取文字尺寸
     CGRect titleBounds = [label.text boundingRectWithSize:CGSizeMake(MAXFLOAT, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.titleFont} context:nil];
     
-    CGFloat underLineH = _underLineH?_underLineH:YZUnderLineH;
+    CGFloat underLineH = _underLineH?_underLineH:UnderLineH;
     
     self.underLine.yz_y = label.yz_height - underLineH;
     self.underLine.yz_height = underLineH;
@@ -976,14 +985,14 @@ static NSString * const ID = @"CONTENTCELL";
 {
     
     // 设置标题滚动区域的偏移量
-    CGFloat offsetX = label.center.x - YZScreenW * 0.5;
+    CGFloat offsetX = label.center.x - ScreenW * 0.5;
     
     if (offsetX < 0) {
         offsetX = 0;
     }
     
     // 计算下最大的标题视图滚动区域
-    CGFloat maxOffsetX = self.titleScrollView.contentSize.width - YZScreenW + _titleMargin;
+    CGFloat maxOffsetX = self.titleScrollView.contentSize.width - ScreenW + _titleMargin;
     
     if (maxOffsetX < 0) {
         maxOffsetX = 0;
@@ -1056,15 +1065,15 @@ static NSString * const ID = @"CONTENTCELL";
 {
     CGFloat offsetX = scrollView.contentOffset.x;
     NSInteger offsetXInt = offsetX;
-    NSInteger screenWInt = YZScreenW;
+    NSInteger screenWInt = ScreenW;
     
     NSInteger extre = offsetXInt % screenWInt;
-    if (extre > YZScreenW * 0.5) {
+    if (extre > ScreenW * 0.5) {
         // 往右边移动
-        offsetX = offsetX + (YZScreenW - extre);
+        offsetX = offsetX + (ScreenW - extre);
         _isAniming = YES;
         [self.contentScrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
-    }else if (extre < YZScreenW * 0.5 && extre > 0){
+    }else if (extre < ScreenW * 0.5 && extre > 0){
         _isAniming = YES;
         // 往左边移动
         offsetX =  offsetX - extre;
@@ -1072,7 +1081,7 @@ static NSString * const ID = @"CONTENTCELL";
     }
     
     // 获取角标
-    NSInteger i = offsetX / YZScreenW;
+    NSInteger i = offsetX / ScreenW;
     
     // 选中标题
     [self selectLabel:self.titleLabels[i]];
@@ -1081,7 +1090,7 @@ static NSString * const ID = @"CONTENTCELL";
     UIViewController *vc = self.childViewControllers[i];
     
     // 发出通知
-    [[NSNotificationCenter defaultCenter] postNotificationName:YZDisplayViewClickOrScrollDidFinshNote object:vc];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DisplayViewClickOrScrollDidFinshNote object:vc];
 }
 
 
@@ -1100,16 +1109,16 @@ static NSString * const ID = @"CONTENTCELL";
     CGFloat offsetX = scrollView.contentOffset.x;
     
     // 获取左边角标
-    NSInteger leftIndex = offsetX / YZScreenW;
+    NSInteger leftIndex = offsetX / ScreenW;
     
     // 左边按钮
-    YZDisplayTitleLabel *leftLabel = self.titleLabels[leftIndex];
+    DisplayTitleLabel *leftLabel = self.titleLabels[leftIndex];
     
     // 右边角标
     NSInteger rightIndex = leftIndex + 1;
     
     // 右边按钮
-    YZDisplayTitleLabel *rightLabel = nil;
+    DisplayTitleLabel *rightLabel = nil;
     
     if (rightIndex < self.titleLabels.count) {
         rightLabel = self.titleLabels[rightIndex];
