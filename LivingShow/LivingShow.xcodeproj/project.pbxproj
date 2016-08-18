@@ -71,6 +71,7 @@
 		0AC376BD1D6472AE00853353 /* AnchorViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC376BB1D6472AE00853353 /* AnchorViewCell.m */; };
 		0AC376BE1D6472AE00853353 /* AnchorViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC376BC1D6472AE00853353 /* AnchorViewCell.xib */; };
 		0AC376C01D6476A600853353 /* FellowerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC376BF1D6476A600853353 /* FellowerViewController.storyboard */; };
+		0AC5B59F1D658978002F70B3 /* HeartFlyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5B59E1D658978002F70B3 /* HeartFlyView.m */; };
 		0AF045B21D61A3A600E3019F /* LiveAnchorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF045B11D61A3A600E3019F /* LiveAnchorView.m */; };
 		0AF045B51D61A44400E3019F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF045B41D61A44400E3019F /* User.m */; };
 		0AF045B81D61A56900E3019F /* LiveEndView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF045B71D61A56900E3019F /* LiveEndView.m */; };
@@ -221,6 +222,8 @@
 		0AC376BB1D6472AE00853353 /* AnchorViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnchorViewCell.m; sourceTree = "<group>"; };
 		0AC376BC1D6472AE00853353 /* AnchorViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnchorViewCell.xib; sourceTree = "<group>"; };
 		0AC376BF1D6476A600853353 /* FellowerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FellowerViewController.storyboard; sourceTree = "<group>"; };
+		0AC5B59D1D658978002F70B3 /* HeartFlyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartFlyView.h; sourceTree = "<group>"; };
+		0AC5B59E1D658978002F70B3 /* HeartFlyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartFlyView.m; sourceTree = "<group>"; };
 		0AF045B01D61A3A600E3019F /* LiveAnchorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveAnchorView.h; sourceTree = "<group>"; };
 		0AF045B11D61A3A600E3019F /* LiveAnchorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveAnchorView.m; sourceTree = "<group>"; };
 		0AF045B31D61A44400E3019F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -843,6 +846,8 @@
 		0A924AAE1D5C7FB20088A558 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0AC5B59D1D658978002F70B3 /* HeartFlyView.h */,
+				0AC5B59E1D658978002F70B3 /* HeartFlyView.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1147,6 +1152,7 @@
 			files = (
 				0ABC03AC1D5D7C49000D498F /* HomeADCell.m in Sources */,
 				0A9249F91D5C6EB80088A558 /* AppDelegate.m in Sources */,
+				0AC5B59F1D658978002F70B3 /* HeartFlyView.m in Sources */,
 				0A0B32111D61545800C4EA9E /* LivingCell.m in Sources */,
 				0ABC03B71D5D7F0D000D498F /* TopAD.m in Sources */,
 				0A716D0E1D62FA36008349D1 /* UIView+Add.m in Sources */,

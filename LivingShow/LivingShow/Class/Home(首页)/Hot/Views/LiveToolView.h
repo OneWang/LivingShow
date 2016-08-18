@@ -10,6 +10,7 @@
 
 typedef NS_ENUM(NSUInteger, LiveToolType) {
     LiveToolTypePublicTalk,
+    LiveToolTypeThumbUp,
     LiveToolTypePrivateTalk,
     LiveToolTypeGift,
     LiveToolTypeRank,

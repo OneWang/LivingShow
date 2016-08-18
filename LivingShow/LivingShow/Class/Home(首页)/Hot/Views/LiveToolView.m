@@ -20,7 +20,7 @@
 
 - (NSArray *)tools
 {
-    return @[@"talk_public_40x40", @"talk_private_40x40", @"talk_sendgift_40x40", @"talk_rank_40x40", @"talk_share_40x40", @"talk_close_40x40"];
+    return @[ @"talk_public_40x40", @"点赞", @"talk_private_40x40", @"talk_sendgift_40x40", @"talk_rank_40x40", @"talk_share_40x40", @"talk_close_40x40"];
 }
 
 - (void)setup

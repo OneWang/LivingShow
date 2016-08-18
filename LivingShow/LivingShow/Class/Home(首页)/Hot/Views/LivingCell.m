@@ -24,6 +24,7 @@
 #import "LiveEndView.h"
 #import "LiveUserView.h"
 #import "LiveToolView.h"
+#import "HeartFlyView.h"
 
 /** 弹幕渲染器 */
 #import <BarrageRenderer.h>
@@ -124,6 +125,9 @@ bool _isSelected = NO;
                     _isSelected = !_isSelected;
                     _isSelected ? [_renderer start] : [_renderer stop];
                     break;
+                case LiveToolTypeThumbUp:
+                    [self animation];
+                    break;
                 case LiveToolTypePrivateTalk:
                     
                     break;
@@ -152,6 +156,25 @@ bool _isSelected = NO;
         _toolView = toolView;
     }
     return _toolView;
+}
+
+- (void)animation{
+    int _heartSize = 36;
+    
+    HeartFlyView *heart = [[HeartFlyView alloc]initWithFrame:CGRectMake(0, 0, _heartSize, _heartSize)];
+    [self.contentView addSubview:heart];
+    CGPoint fountainSource = CGPointMake(_heartSize + _heartSize/2.0, self.contentView.bounds.size.height - _heartSize/2.0 - 10);
+    heart.center = fountainSource;
+    [heart animateInView:self.contentView];
+    
+    // button点击动画
+    CAKeyframeAnimation *btnAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+    btnAnimation.values = @[@(1.0),@(0.7),@(0.5),@(0.3),@(0.5),@(0.7),@(1.0), @(1.2), @(1.4), @(1.2), @(1.0)];
+    btnAnimation.keyTimes = @[@(0.0),@(0.1),@(0.2),@(0.3),@(0.4),@(0.5),@(0.6),@(0.7),@(0.8),@(0.9),@(1.0)];
+    btnAnimation.calculationMode = kCAAnimationLinear;
+    btnAnimation.duration = 0.3;
+    UIImageView *image = (UIImageView *)[self.toolView viewWithTag:1];
+    [image.layer addAnimation:btnAnimation forKey:@"SHOW"];
 }
 
 - (void)quit
