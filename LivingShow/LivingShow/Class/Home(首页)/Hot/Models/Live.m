@@ -12,7 +12,7 @@
 - (UIImage *)starImage
 {
     if (self.starlevel) {
-        return [UIImage imageNamed:[NSString stringWithFormat:@"girl_star%ld_40x19", self.starlevel]];
+        return [UIImage imageNamed:[NSString stringWithFormat:@"girl_star%ld_40x19", (unsigned long)self.starlevel]];
     }
     return nil;
 }

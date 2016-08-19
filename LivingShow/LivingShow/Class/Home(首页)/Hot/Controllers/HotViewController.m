@@ -96,7 +96,7 @@ static NSString *ADReuseIdentifier = @"HomeADCell";
 
 - (void)getHotLiveList
 {
-    [[NetWorkRequest sharedNetWorkRequest] get:[NSString stringWithFormat:@"http://live.9158.com/Fans/GetHotLive?page=%ld", self.currentPage] params:nil success:^(id object) {
+    [[NetWorkRequest sharedNetWorkRequest] get:[NSString stringWithFormat:@"http://live.9158.com/Fans/GetHotLive?page=%ld", (unsigned long)self.currentPage] params:nil success:^(id object) {
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         NSArray *result = [Live mj_objectArrayWithKeyValuesArray:object[@"data"][@"list"]];

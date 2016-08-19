@@ -74,7 +74,7 @@ static int randomNum = 0;
     _live = live;
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:live.smallpic] placeholderImage:[UIImage imageNamed:@"placeholder_head"]];
     self.nameLabel.text = live.myname;
-    self.peopleLabel.text = [NSString stringWithFormat:@"%ld人", live.allnum];
+    self.peopleLabel.text = [NSString stringWithFormat:@"%ld人", (unsigned long)live.allnum];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateNum) userInfo:nil repeats:YES];
     self.headImageView.userInteractionEnabled = YES;
     [self.headImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickChangYang:)]];
@@ -83,7 +83,7 @@ static int randomNum = 0;
 - (void)updateNum
 {
     randomNum += arc4random_uniform(5);
-    self.peopleLabel.text = [NSString stringWithFormat:@"%ld人", self.live.allnum + randomNum];
+    self.peopleLabel.text = [NSString stringWithFormat:@"%lu人", self.live.allnum + randomNum];
     [self.giftView setTitle:[NSString stringWithFormat:@"猫粮:%u  娃娃%u", 1993045 + randomNum,  124593+randomNum] forState:UIControlStateNormal];
 }
 

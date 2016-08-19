@@ -12,11 +12,11 @@
 @interface ADViewController ()<UIViewControllerTransitioningDelegate>
 {
     UIImageView *_adsImageView;// 图片视图
-    NSTimer *_waitRequestTimer;//
-    NSTimer *_adsAccordingTimer;
-    UIButton *_time_btton;
-    UIButton *_jump_button;
-    NSInteger _seconds;
+    NSTimer *_waitRequestTimer;// 等待请求时间
+    NSTimer *_adsAccordingTimer;// 广告时长
+    UIButton *_time_btton;// 时间按钮
+    UIButton *_jump_button;// 跳过按钮
+    NSInteger _seconds;// 时间秒
     NSInteger _adsAccording_Integer;
     UIImageView *_LaunchImage;
 }
@@ -31,13 +31,13 @@
     _LaunchImage.image = [UIImage imageNamed:@"LaunchImage@2x.png"];
     [self.view addSubview:_LaunchImage];
     [self requestAds];
-    _seconds = 6;
+    _seconds = 3;
     _waitRequestTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(Waiting) userInfo:nil repeats:YES];
 }
 -(void)requestAds
 {
     // 模拟网络请求
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self addUI];
         [_waitRequestTimer invalidate];
     });
@@ -68,13 +68,13 @@
      *  显示倒计时的时间按钮
      *
      */
-    _time_btton = [self addButtonWithImagename:@"miaoshu" andTitle:@"5S" andFram:CGRectMake(screenW-70, 30, 50, 30)];
+    _time_btton = [self addButtonWithImagename:@"miaoshu" andTitle:@"跳过 3S" andFram:CGRectMake(screenW-70, 30, 50, 30)];
     /**
      *  创建倒计时
      *
      */
     _adsAccordingTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerAccord) userInfo:nil repeats:YES];
-    _adsAccording_Integer = 6;
+    _adsAccording_Integer = 3;
 }
 /**
  *  广告的倒计时
@@ -82,7 +82,7 @@
 -(void)timerAccord
 {
     _adsAccording_Integer--;
-    [_time_btton setTitle:[NSString stringWithFormat:@"%zd",_adsAccording_Integer] forState:0];
+    [_time_btton setTitle:[NSString stringWithFormat:@"跳过 %zdS",_adsAccording_Integer] forState:0];
     if (_adsAccording_Integer <=  0) {
         [self myLog];
     }

@@ -44,8 +44,8 @@
     self.startView.hidden = !live.starlevel;
     
     // 设置当前观众数量
-    NSString *fullChaoyang = [NSString stringWithFormat:@"%ld人在看", live.allnum];
-    NSRange range = [fullChaoyang rangeOfString:[NSString stringWithFormat:@"%ld", live.allnum]];
+    NSString *fullChaoyang = [NSString stringWithFormat:@"%ld人在看", (unsigned long)live.allnum];
+    NSRange range = [fullChaoyang rangeOfString:[NSString stringWithFormat:@"%ld", (unsigned long)live.allnum]];
     NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:fullChaoyang];
     [attr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:17] range: range];
     [attr addAttribute:NSForegroundColorAttributeName value:KeyColor range:range];

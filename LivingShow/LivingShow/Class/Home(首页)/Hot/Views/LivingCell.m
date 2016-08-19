@@ -98,7 +98,7 @@
 {
     if (!_anchorView) {
         LiveAnchorView *anchorView = [LiveAnchorView liveAnchorView];
-        anchorView.isShow = ^(bool isSelected) {
+        anchorView.isShow = ^(BOOL isSelected) {
             if (_moviePlayer) {
                 _moviePlayer.shouldShowHudView = !isSelected;
             }
@@ -187,6 +187,8 @@ bool _isSelected = NO;
     if (_moviePlayer) {
         [self.moviePlayer shutdown];
         [[NSNotificationCenter defaultCenter] removeObserver:self];
+        [self.moviePlayer.view removeFromSuperview];
+        self.moviePlayer = nil;
     }
     [_renderer stop];
     [_renderer.view removeFromSuperview];
@@ -416,7 +418,7 @@ bool _isSelected = NO;
         [weakSelf.moviePlayer shutdown];
         [weakSelf.moviePlayer.view removeFromSuperview];
         weakSelf.moviePlayer = nil;
-//        weakSelf.endView.hidden = NO;
+        weakSelf.endView.hidden = NO;
     }];
 }
 

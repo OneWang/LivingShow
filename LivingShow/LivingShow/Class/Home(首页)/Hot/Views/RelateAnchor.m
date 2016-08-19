@@ -29,6 +29,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+
     self.playView.layer.cornerRadius = self.playView.height * 0.5;
     self.playView.layer.masksToBounds = YES;
 }

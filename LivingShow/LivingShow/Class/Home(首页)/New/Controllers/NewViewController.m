@@ -98,7 +98,7 @@ static NSString * const reuseIdentifier = @"NewStarCell";
 // 获取数据
 - (void)getAnchorsList
 {
-    [[NetWorkRequest sharedNetWorkRequest] get:[NSString stringWithFormat:@"http://live.9158.com/Room/GetNewRoomOnline?page=%ld", self.currentPage] params:nil success:^(id object) {
+    [[NetWorkRequest sharedNetWorkRequest] get:[NSString stringWithFormat:@"http://live.9158.com/Room/GetNewRoomOnline?page=%ld", (unsigned long)self.currentPage] params:nil success:^(id object) {
         [self.collectionView.mj_header endRefreshing];
         [self.collectionView.mj_footer endRefreshing];
         NSString *statuMsg = object[@"msg"];
