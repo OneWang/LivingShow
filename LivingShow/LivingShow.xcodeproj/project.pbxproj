@@ -445,8 +445,8 @@
 			isa = PBXGroup;
 			children = (
 				0A924AC11D5C81FB0088A558 /* RequestCover.h */,
-				0A924AC41D5C82BA0088A558 /* RequestCover.xib */,
 				0A924AC21D5C81FB0088A558 /* RequestCover.m */,
+				0A924AC41D5C82BA0088A558 /* RequestCover.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";

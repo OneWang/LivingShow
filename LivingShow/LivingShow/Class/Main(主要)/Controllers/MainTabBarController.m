@@ -76,13 +76,17 @@
 #pragma mark 封装添加控制器方法
 - (void)addChildViewController:(UIViewController *)chileViewController withImageNamed:(NSString *)imageName withTitle:(NSString *)title{
     QFNavigationController *nav = [[QFNavigationController alloc] initWithRootViewController:chileViewController];
-    UIImage *image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *selImage = [[UIImage imageNamed:[NSString stringWithFormat:@"%@_on",imageName]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    nav.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:image selectedImage:selImage];
+    
+    UIImage *image = [UIImage imageNamed:imageName];
+    UIImage *selImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_on",imageName]];
+    chileViewController.tabBarItem.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    chileViewController.tabBarItem.selectedImage = [selImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    chileViewController.tabBarItem.title = title;
     
     // 设置图片居中, 这儿需要注意top和bottom必须绝对值一样大
-    chileViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(10, 0, 0, 0);
-    chileViewController.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -5);
+    chileViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+    chileViewController.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -2);
     
     //设置导航栏为透明的
 //    if ([chileViewController isKindOfClass:[HomeViewController class]]) {
