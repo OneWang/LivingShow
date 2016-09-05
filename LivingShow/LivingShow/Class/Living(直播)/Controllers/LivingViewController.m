@@ -65,11 +65,11 @@
     __weak MainTabBarController *tabBar = (MainTabBarController *)self.tabBarController;
     QFTabbar *myTabBar = nil;
     for (UIView *view in tabBar.tabBar.subviews) {
-        if ([view isKindOfClass:[UITabBar class]]) {
+        if ([view isKindOfClass:[QFTabbar class]]) {
             myTabBar = (QFTabbar *)view;
         }
     }
-    myTabBar.selectedIndex = 2;
+    myTabBar.selectedIndex = 0;
 }
 
 //开始直播采集

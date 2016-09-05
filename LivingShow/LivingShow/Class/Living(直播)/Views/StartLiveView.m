@@ -12,6 +12,9 @@
 #import "UIControl+Add.h"
 #import "UIView+Add.h"
 
+#import "QFTabbar.h"
+#import "MainTabBarController.h"
+
 @interface StartLiveView ()
 
 /** 美颜 */
@@ -161,7 +164,15 @@ static int padding = 30;
         _closeButton.exclusiveTouch = YES;
         __weak __typeof__(self) weakSelf = self;
         [_closeButton addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
-            [weakSelf.viewController dismissViewControllerAnimated:YES completion:nil];
+//            [weakSelf.viewController dismissViewControllerAnimated:YES completion:nil];
+            __weak MainTabBarController *tabBar = (MainTabBarController *)weakSelf.viewController.tabBarController;
+            QFTabbar *myTabBar = nil;
+            for (UIView *view in tabBar.tabBar.subviews) {
+                if ([view isKindOfClass:[QFTabbar class]]) {
+                    myTabBar = (QFTabbar *)view;
+                }
+            }
+            myTabBar.selectedIndex = 0;
         }];
     }
     return _closeButton;
