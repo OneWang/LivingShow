@@ -33,6 +33,4 @@
  */
 - (void)addTabBarButtonWithImageName:(NSString *)name title:(NSString *)title;
 
-- (void)addTabBarButtonWithImageName:(NSString *)name selName:(NSString *)selName title:(NSString *)title;
-
 @end

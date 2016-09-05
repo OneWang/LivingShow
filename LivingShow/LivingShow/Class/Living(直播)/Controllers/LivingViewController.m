@@ -7,8 +7,10 @@
 //
 
 #import "LivingViewController.h"
+#import "MainTabBarController.h"
 
 #import "GPUImageGaussianBlurFilter.h"
+#import "QFTabbar.h"
 
 #import "StartLiveView.h"
 
@@ -27,7 +29,6 @@
     //设置背景图片高斯模糊
     [self gaussianImage];
     
-    self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.hidden = YES;
     
     //设置键盘TextField
@@ -59,8 +60,16 @@
 
 //返回主界面
 - (IBAction)backMain {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    __weak MainTabBarController *tabBar = (MainTabBarController *)self.tabBarController;
+    QFTabbar *myTabBar = nil;
+    for (UIView *view in tabBar.tabBar.subviews) {
+        if ([view isKindOfClass:[UITabBar class]]) {
+            myTabBar = (QFTabbar *)view;
+        }
+    }
+    myTabBar.selectedIndex = 2;
 }
 
 //开始直播采集
@@ -71,6 +80,10 @@
     
     _backBtn.hidden = YES;
     _middleView.hidden = YES;
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [_myTitle endEditing:YES];
 }
 
 @end

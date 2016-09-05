@@ -57,6 +57,7 @@
 		0A924AC01D5C80400088A558 /* FellowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A924ABF1D5C80400088A558 /* FellowerViewController.m */; };
 		0A924AC31D5C81FB0088A558 /* RequestCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A924AC21D5C81FB0088A558 /* RequestCover.m */; };
 		0A924AC51D5C82BA0088A558 /* RequestCover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A924AC41D5C82BA0088A558 /* RequestCover.xib */; };
+		0A9A590C1D7D707600CAC6E7 /* MyTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A590B1D7D707600CAC6E7 /* MyTabBarButton.m */; };
 		0ABC03A51D5D5AF0000D498F /* XRCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABC03A31D5D5AF0000D498F /* XRCarouselView.m */; };
 		0ABC03A61D5D5AF0000D498F /* XRPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ABC03A41D5D5AF0000D498F /* XRPlaceholder.png */; };
 		0ABC03A91D5D5CC3000D498F /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABC03A81D5D5CC3000D498F /* NetWorkRequest.m */; };
@@ -198,6 +199,8 @@
 		0A924AC11D5C81FB0088A558 /* RequestCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestCover.h; sourceTree = "<group>"; };
 		0A924AC21D5C81FB0088A558 /* RequestCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestCover.m; sourceTree = "<group>"; };
 		0A924AC41D5C82BA0088A558 /* RequestCover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestCover.xib; sourceTree = "<group>"; };
+		0A9A590A1D7D707600CAC6E7 /* MyTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarButton.h; sourceTree = "<group>"; };
+		0A9A590B1D7D707600CAC6E7 /* MyTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabBarButton.m; sourceTree = "<group>"; };
 		0ABC03A21D5D5AF0000D498F /* XRCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRCarouselView.h; sourceTree = "<group>"; };
 		0ABC03A31D5D5AF0000D498F /* XRCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRCarouselView.m; sourceTree = "<group>"; };
 		0ABC03A41D5D5AF0000D498F /* XRPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XRPlaceholder.png; sourceTree = "<group>"; };
@@ -587,6 +590,8 @@
 		0A924A4F1D5C70370088A558 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0A9A590A1D7D707600CAC6E7 /* MyTabBarButton.h */,
+				0A9A590B1D7D707600CAC6E7 /* MyTabBarButton.m */,
 				0A924A501D5C70370088A558 /* QFTabbar.h */,
 				0A924A511D5C70370088A558 /* QFTabbar.m */,
 			);
@@ -1173,6 +1178,7 @@
 				0A0B320E1D61526900C4EA9E /* LivingFlowLayout.m in Sources */,
 				0A0A71831D645ED2006CA3D8 /* AAPLCrossDissolveTransitionAnimator.m in Sources */,
 				0AF045B21D61A3A600E3019F /* LiveAnchorView.m in Sources */,
+				0A9A590C1D7D707600CAC6E7 /* MyTabBarButton.m in Sources */,
 				0A924A771D5C70370088A558 /* LoginViewController.m in Sources */,
 				0A924A741D5C70370088A558 /* FellowViewController.m in Sources */,
 				0ABC03BA1D5D8BD3000D498F /* LiveCollectionViewController.m in Sources */,

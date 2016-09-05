@@ -150,11 +150,10 @@ static int padding = 30;
 }
 
 #pragma mark ---- <关闭界面>
-- (UIButton*)closeButton{
+- (UIButton *)closeButton{
     
     if(!_closeButton){
         _closeButton = [UIButton new];
-        
         //位置
         _closeButton.frame = CGRectMake(screenW - padding * 2, padding, padding, padding);
         

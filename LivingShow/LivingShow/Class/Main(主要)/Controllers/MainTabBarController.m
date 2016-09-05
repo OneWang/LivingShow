@@ -9,6 +9,7 @@
 #import "MainTabBarController.h"
 /** 自定义导航控制器 */
 #import "QFNavigationController.h"
+#import "QFTabbar.h"
 
 /** 子控制器 */
 #import "HomeViewController.h"
@@ -21,18 +22,20 @@
 /** 导入系统框架 */
 #import <AVFoundation/AVFoundation.h>
 
-@interface MainTabBarController ()<UITabBarControllerDelegate>
+@interface MainTabBarController ()<UITabBarControllerDelegate,tabBarDelegate>
 
 {
     BOOL _isClick;
     UIImageView *_imageView;
 }
+//自定义 tabbar
+@property (nonatomic,strong) QFTabbar * MyTabbar;
 
 @end
 
 @implementation MainTabBarController
 
--(void)viewDidAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     ADViewController *AD = [[ADViewController alloc]init];
@@ -55,38 +58,62 @@
     [self.view addSubview:_imageView];
     [self.view bringSubviewToFront:_imageView];
     
-    
-    //设置代理
-    self.delegate = self;
-    
     //设置 TabBarcontroller 下面的子控制器
     [self setup];
+    
+    [self createMyTabBar];
+    //设置代理
+//    self.delegate = self;
+    
+    [self.MyTabbar addTabBarButtonWithImageName:@"home" title:@"首页"];
+    [self.MyTabbar addTabBarButtonWithImageName:@"discover" title:@"直播"];
+    [self.MyTabbar addTabBarButtonWithImageName:@"payticket" title:@"关注"];
+    [self.MyTabbar addTabBarButtonWithImageName:@"myinfo" title:@"我的"];
+}
+/**
+ *  添加自定义 tabbar
+ */
+- (void)createMyTabBar{
+    self.MyTabbar = [[QFTabbar alloc] init];
+    self.MyTabbar.frame = self.tabBar.bounds;
+//    self.MyTabbar.frame = CGRectMake(0, screenH - 49, screenW, 49);
+//    self.tabBar.hidden = YES;
+//    [self.view addSubview:self.MyTabbar];
+    [self.tabBar addSubview:self.MyTabbar];
+    self.MyTabbar.delegate = self;
+    self.MyTabbar.backgroundColor = [UIColor whiteColor];
 }
 
 #pragma 设置子控制器
 - (void)setup{
-    HomeViewController *home = [[HomeViewController alloc] init];
-    home.title = @"首页";
-    [self addChildViewController:home withImageNamed:@"home" withTitle:@"首页"];
-    [self addChildViewController:[[LivingViewController alloc] init] withImageNamed:@"discover" withTitle:@"直播"];
-    [self addChildViewController:[[FellowViewController alloc] init] withImageNamed:@"payticket" withTitle:@"关注"];
-    [self addChildViewController:[[MineViewController alloc] init] withImageNamed:@"myinfo" withTitle:@"我的"];
+    QFNavigationController *nav1 = [[QFNavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
+    QFNavigationController *nav2 = [[QFNavigationController alloc] initWithRootViewController:[[LivingViewController alloc] init]];
+    QFNavigationController *nav3 = [[QFNavigationController alloc] initWithRootViewController:[[FellowViewController alloc] init]];
+    QFNavigationController *nav4 = [[QFNavigationController alloc] initWithRootViewController:[[MineViewController alloc] init]];
+    self.viewControllers = @[nav1,nav2,nav3,nav4];
+    
+//    HomeViewController *home = [[HomeViewController alloc] init];
+//    home.navigationItem.title = @"首页";
+//    [self createChildViewController:home];
+//    [self createChildViewController:[[LivingViewController alloc] init]];
+//    [self createChildViewController:[[FellowViewController alloc] init]];
+//    [self createChildViewController:[[MineViewController alloc] init]];
 }
 
 #pragma mark 封装添加控制器方法
-- (void)addChildViewController:(UIViewController *)chileViewController withImageNamed:(NSString *)imageName withTitle:(NSString *)title{
-    QFNavigationController *nav = [[QFNavigationController alloc] initWithRootViewController:chileViewController];
-    
-    UIImage *image = [UIImage imageNamed:imageName];
-    UIImage *selImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_on",imageName]];
-    chileViewController.tabBarItem.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    chileViewController.tabBarItem.selectedImage = [selImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    chileViewController.tabBarItem.title = title;
-    
+//- (void)addChildViewController:(UIViewController *)chileViewController withImageNamed:(NSString *)imageName withTitle:(NSString *)title{
+//    QFNavigationController *nav = [[QFNavigationController alloc] initWithRootViewController:chileViewController];
+//    
+//    UIImage *image = [UIImage imageNamed:imageName];
+//    UIImage *selImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_on",imageName]];
+//    chileViewController.tabBarItem.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    chileViewController.tabBarItem.selectedImage = [selImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    
+//    chileViewController.tabBarItem.title = title;
+
     // 设置图片居中, 这儿需要注意top和bottom必须绝对值一样大
-    chileViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
-    chileViewController.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -2);
+//    chileViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+//    chileViewController.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -2);
     
     //设置导航栏为透明的
 //    if ([chileViewController isKindOfClass:[HomeViewController class]]) {
@@ -96,13 +123,26 @@
 //        nav.navigationBar.hidden = YES;
 //    }
     //添加到主控制器
+//    [self addChildViewController:nav];
+//}
+
+- (void)createChildViewController:(UIViewController *)childController{
+    QFNavigationController *nav = [[QFNavigationController alloc] initWithRootViewController:childController];
+    //添加到主控制器
     [self addChildViewController:nav];
+}
+
+//实现代理方法实现跳转
+- (void)tabBar:(QFTabbar *)tabBar didSelectButtonFrom:(int)from to:(int)to
+{
+    self.selectedIndex = to;
 }
 
 #pragma mark UITabBarControllerDelegate
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    if ([tabBarController.childViewControllers indexOfObject:viewController] == tabBarController.childViewControllers.count - 3) {
+    NSLog(@"%ld",[tabBarController.childViewControllers indexOfObject:viewController]);
+//    if ([tabBarController.childViewControllers indexOfObject:viewController] == tabBarController.childViewControllers.count - 3) {
 //        self.hidesBottomBarWhenPushed = YES;
 //        //判断是否是模拟器
 //        if ([[UIDevice deviceVersion] isEqualToString:@"iPhone Simulator"]) {
@@ -138,7 +178,7 @@
 //        LivingViewController *living = [[LivingViewController alloc] init];
 //        [self presentViewController:living animated:YES completion:nil];
 //        return NO;
-    }
+//    }
     return YES;
 }
 
