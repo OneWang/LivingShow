@@ -8,7 +8,12 @@
 
 #import "QFNavigationController.h"
 
-@interface QFNavigationController ()
+#import "HomeViewController.h"
+#import "LivingViewController.h"
+#import "FellowViewController.h"
+#import "MineViewController.h"
+
+@interface QFNavigationController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -36,6 +41,8 @@
         __weak typeof(viewController)Weakself = viewController;
         self.interactivePopGestureRecognizer.delegate = (id)Weakself;
     }
+    //设置返回按钮
+//    viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navBar_bg_414x70"] style:UIBarButtonItemStyleDone target:self action:@selector(popViewControllerAnimated:)];
     [super pushViewController:viewController animated:animated];
 }
 
@@ -48,5 +55,18 @@
         [self popViewControllerAnimated:YES];
 }
 
+#pragma mark - UIGestureRecognizerDelegate
+////右滑返回的处理
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    BOOL ok = YES; // 默认为支持右滑反回
+    if ([self.topViewController isKindOfClass:[HomeViewController class]] ||
+        [self.topViewController isKindOfClass:[LivingViewController class]] ||
+        [self.topViewController isKindOfClass:[FellowViewController class]] ||
+        [self.topViewController isKindOfClass:[MineViewController class]]) {
+        return NO;
+    }
+    return ok;
+}
 
 @end
