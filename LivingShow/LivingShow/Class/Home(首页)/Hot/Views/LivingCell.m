@@ -230,13 +230,13 @@ bool _isSelected = NO;
             // 粒子的运动速度
             stepCell.velocity = arc4random_uniform(100) + 100;
             // 粒子速度的容差
-            stepCell.velocityRange = 80;
+            stepCell.velocityRange = 90;
             // 粒子在xy平面的发射角度
             stepCell.emissionLongitude = M_PI+M_PI_2;;
             // 粒子发射角度的容差
             stepCell.emissionRange = M_PI_2/6;
             // 缩放比例
-            stepCell.scale = 0.3;
+            stepCell.scale = 0.4;
             [array addObject:stepCell];
         }
         emitter.emitterCells = array;
